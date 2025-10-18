@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: #333; margin: 0; padding: 20px; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 600px; width: 100%; }
+        h1 { text-align: center; color: #4facfe; margin-bottom: 20px; }
+        .details { display: flex; flex-direction: column; }
+        .detail { margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px; }
+        .label { font-weight: bold; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Details</h1>
+        <div class="details">
+            <div class="detail"><span class="label">Generic Name:</span> <span id="genericName"></span></div>
+            <div class="detail"><span class="label">Brand Name:</span> <span id="brandName"></span></div>
+            <div class="detail"><span class="label">Batch No:</span> <span id="batchNo"></span></div>
+            <div class="detail"><span class="label">Mfg.Date:</span> <span id="mfgDate"></span></div>
+            <div class="detail"><span class="label">EXP.Date:</span> <span id="expDate"></span></div>
+            <div class="detail"><span class="label">MRP Rs:</span> <span id="mrp"></span></div>
+            <div class="detail"><span class="label">Manufactured By:</span> <span id="manufacturedBy"></span></div>
+            <div class="detail"><span class="label">Marketed by:</span> <span id="marketedBy"></span></div>
+        </div>
+        <button id="backBtn" style="margin-top: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Back</button>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('genericName').textContent = urlParams.get('genericName') || 'N/A';
+        document.getElementById('brandName').textContent = urlParams.get('brandName') || 'N/A';
+        document.getElementById('batchNo').textContent = urlParams.get('batchNo') || 'N/A';
+        document.getElementById('mfgDate').textContent = urlParams.get('mfgDate') || 'N/A';
+        document.getElementById('expDate').textContent = urlParams.get('expDate') || 'N/A';
+        document.getElementById('mrp').textContent = urlParams.get('mrp') || 'N/A';
+        document.getElementById('manufacturedBy').textContent = urlParams.get('manufacturedBy') || 'N/A';
+        document.getElementById('marketedBy').textContent = urlParams.get('marketedBy') || 'N/A';
+    </script>
+</body>
+</html>
